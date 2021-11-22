@@ -2,9 +2,16 @@
   "identifier": "com.roojay.bobplug.anki",
   "versions": [
     {
+      "version": "0.0.2",
+      "desc": "https://github.com/robbinhan/anki/blob/master/CHANGELOG.md",
+      "sha256": "837c6bde6116bc6fa3b6d806a211e3891fe9ba2ac614ae467c121190d1b5acb5",
+      "url": "https://github.com/robbinhan/anki/releases/download/v0.0.2/anki-v0.0.2.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "0.0.1",
       "desc": "https://github.com/robbinhan/anki/blob/master/CHANGELOG.md",
-      "sha256": "e0b3fd69af0cad8cade61333833879eecdcf94b6adc6d46a5d7552e4163d05af",
+      "sha256": "27721906af01eb8144553cd6d8f7186ad639db12b20ff4cca9faf4444a60bac5",
       "url": "https://github.com/robbinhan/anki/releases/download/v0.0.1/anki-v0.0.1.bobplugin",
       "minBobVersion": "0.5.0"
     },

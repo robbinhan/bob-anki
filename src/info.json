@@ -1,7 +1,7 @@
 {
   "identifier": "com.roojay.bobplug.anki",
   "category": "translate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "name": "生成anki卡片",
   "summary": "生成anki卡片",
   "author": "robbinhan",
