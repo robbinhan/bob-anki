@@ -51,7 +51,7 @@ const RollupConfig = {
       exclude: /node_modules/, // default
       sourceMap: false, // default
       minify: process.env.NODE_ENV === 'production',
-      target: 'es6', // default, or 'es20XX', 'esnext',
+      target: 'es2018', // default, or 'es20XX', 'esnext',
       // Add extra loaders
       loaders: {
         // Add .json files support

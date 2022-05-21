@@ -105,3 +105,4 @@ dist
 banner.user.js
 
 release
+.DS_Store

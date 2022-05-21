@@ -1,7 +1,7 @@
 {
   "identifier": "com.roojay.bobplug.anki",
   "category": "translate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "name": "生成anki卡片",
   "summary": "生成anki卡片",
   "author": "robbinhan",
@@ -14,6 +14,13 @@
       "identifier": "token",
       "type": "text",
       "title": "彩云小译Token"
+    },
+    {
+      "identifier": "savePath",
+      "type": "text",
+      "title": "文件名",
+      "defaultValue": "anki.txt",
+      "desc": "用与在anki没有启动时优先保存在文件中，方便后续导入anki牌组"
     }
   ]
 }
