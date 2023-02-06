@@ -17,3 +17,4 @@
 2. Anki中必须有一个牌组叫 Default，有一个模板叫Basic,不然就会添加错误。
 3. 使用Bob取词，单词就会存入anki中并带有bob标签
 
+感谢 [#5](https://github.com/robbinhan/bob-anki/issues/5)
