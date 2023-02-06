@@ -1,6 +1,6 @@
 {
   "name": "anki",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "生成anki卡片",
   "homepage": "https://github.com/robbinhan/bob-anki",
   "repository": "https://github.com/robbinhan/bob-anki.git",
