@@ -12,6 +12,9 @@ export function supportLanguages(): Bob.supportLanguages {
   return getSupportLanguages();
 }
 
+// @ts-ignore
+global.supportLanguages = supportLanguages;
+
 // https://ripperhe.gitee.io/bob/#/plugin/quickstart/translate
 export function translate(query: Bob.TranslateQuery, completion: Bob.Completion) {
   const { text = '', detectFrom, detectTo } = query;
@@ -63,7 +66,8 @@ export function translate(query: Bob.TranslateQuery, completion: Bob.Completion)
 }
 
 
-
+// @ts-ignore
+global.translate = translate;
 
 
 

@@ -4,7 +4,7 @@
     {
       "version": "0.0.3",
       "desc": "https://github.com/robbinhan/anki/blob/master/CHANGELOG.md",
-      "sha256": "d7356fea1d2eb9a1c93f9b3267b73d72ff4a290116946fd39886a7c3b8f4cf36",
+      "sha256": "488ac0c4d868586ddda371e86068c1109f714433dd4b55d75c631ede11a46170",
       "url": "https://github.com/robbinhan/anki/releases/download/v0.0.3/anki-v0.0.3.bobplugin",
       "minBobVersion": "0.5.0"
     },
