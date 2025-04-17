@@ -1,5 +1,5 @@
-import * as Bob from '@bob-plug/core';
-import { translate } from './main';
+// import * as Bob from '@bob-plug/core';
+// import { translate } from './main';
 
 /**
  * 查找笔记
@@ -7,7 +7,8 @@ import { translate } from './main';
  * @returns 
  */
 async function findNote(text: string) {
-    const note = await Bob.api.$http.post({
+    const note = await $http.request({
+        method: 'POST',
         url: 'http://localhost:8765',
         header: {
             'Content-Type': 'application/json',
@@ -21,11 +22,11 @@ async function findNote(text: string) {
         }
     });
 
-    Bob.api.$log.info("note resp");
-    Bob.api.$log.info(JSON.stringify(note));
+    $log.info("note resp");
+    $log.info(JSON.stringify(note));
     if (note.error) {
-        Bob.api.$log.info("has error");
-        throw new Error(note.error.localizedDescription);
+        $log.info("has error");
+        throw new Error("Anki 查询失败");
     }
 
     if (note.data.result.length === 0) {
@@ -44,7 +45,8 @@ async function findNote(text: string) {
  * @returns 
  */
 async function save(text: string, translateResult: string) {
-    return await Bob.api.$http.post({
+    return await $http.request({
+        method: 'POST',
         url: 'http://localhost:8765',
         header: {
             'Content-Type': 'application/json',

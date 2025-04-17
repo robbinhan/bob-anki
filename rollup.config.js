@@ -1,16 +1,17 @@
-import path from 'path';
-import copy from 'rollup-plugin-copy';
-import json from '@rollup/plugin-json';
-import babel from '@rollup/plugin-babel';
-import esbuild from 'rollup-plugin-esbuild';
-import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
-import nodePolyfills from 'rollup-plugin-polyfill-node';
-import packageJson from './package.json';
+const path = require('path');
+const copy = require('rollup-plugin-copy');
+const json = require('@rollup/plugin-json');
+// const babel = require('@rollup/plugin-babel').default; // 注意：@rollup/plugin-babel 可能需要 .default
+const esbuild = require('rollup-plugin-esbuild').default; // 尝试添加 .default
+const commonjs = require('@rollup/plugin-commonjs');
+const resolve = require('@rollup/plugin-node-resolve');
+const nodePolyfills = require('rollup-plugin-polyfill-node');
+const packageJson = require('./package.json'); // require 可以直接加载 JSON
+const typescript = require("@rollup/plugin-typescript");
 
 const pkg = `${packageJson.name}.bobplugin`;
 
-const RollupConfig = {
+module.exports = {
   input: path.join(__dirname, './src/main.ts'),
   output: {
     format: 'cjs',
@@ -33,6 +34,11 @@ const RollupConfig = {
         { src: './src/libs', dest: `dist/${pkg}/` },
       ],
     }),
+    typescript({
+      tsconfig: './tsconfig.json', // 指定 tsconfig 文件
+      // 可能需要显式指定依赖 tslib
+      // tslib: require.resolve('tslib') // 通常不需要，但可以尝试
+    }),
     json({ namedExports: false }),
     resolve({
       extensions: ['.js', '.ts', '.json'],
@@ -40,16 +46,16 @@ const RollupConfig = {
     }),
     commonjs(),
     nodePolyfills(),
-    babel({
-      extensions: ['.js', '.ts'],
-      babelHelpers: 'bundled',
-      exclude: 'node_modules/**',
-    }),
+    // babel({
+    //   extensions: ['.js', '.ts'],
+    //   babelHelpers: 'bundled',
+    //   exclude: 'node_modules/**',
+    // }),
     esbuild({
       // All options are optional
       include: /\.[jt]?s$/, // default, inferred from `loaders` option
       exclude: /node_modules/, // default
-      sourceMap: false, // default
+      sourceMap: true, // default
       minify: process.env.NODE_ENV === 'production',
       target: 'es2018', // default, or 'es20XX', 'esnext',
       // Add extra loaders
@@ -62,5 +68,3 @@ const RollupConfig = {
   ],
   external: ['crypto-js']
 };
-
-export default RollupConfig;

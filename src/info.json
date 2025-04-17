@@ -1,19 +1,19 @@
 {
   "identifier": "com.roojay.bobplug.anki",
   "category": "translate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "name": "生成anki卡片",
   "summary": "生成anki卡片",
   "author": "robbinhan",
   "appcast": "https://raw.githubusercontent.com/robbinhan/anki/master/src/appcast.json",
   "homepage": "https://github.com/robbinhan/bob-anki",
   "icon": "001",
-  "minBobVersion": "0.5.0",
+  "minBobVersion": "1.8.0",
   "options": [
     {
       "identifier": "token",
       "type": "text",
-      "title": "彩云小译Token"
+      "title": "智谱token"
     },
     {
       "identifier": "savePath",
